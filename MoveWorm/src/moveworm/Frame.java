@@ -11,15 +11,18 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.geom.Ellipse2D;
 
-public class Window extends JPanel implements ActionListener{
+public class Frame extends JPanel implements ActionListener{
     
     Timer t = new Timer(5, this);
     double x = 50,y = 50, velX = 1, velY = 1;
     Graphics2D g2;
     
-    public Window(){
+    public Frame(){
         setBackground(Color.black);
-
+        setSize(300,300);
+        BorderLayout layout = new BorderLayout();
+        layout.setHgap(10);
+        layout.setVgap(10);
     }
 
     @Override
