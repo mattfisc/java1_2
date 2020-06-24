@@ -5,6 +5,7 @@
 package moveworm;
 
 import javax.swing.*;
+import javax.swing.border.Border;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -18,6 +19,7 @@ public class Window extends JPanel implements ActionListener{
     
     public Window(){
         setBackground(Color.black);
+
     }
 
     @Override
@@ -25,7 +27,7 @@ public class Window extends JPanel implements ActionListener{
         super.paintComponent(g);
         g2 = (Graphics2D) g;
         g2.setColor(Color.red);
-        Ellipse2D circle = new Ellipse2D.Double(x,y,10,10);
+        Ellipse2D circle = new Ellipse2D.Double(x,y,50,50);
         g2.fill(circle);
         
        
@@ -36,11 +38,11 @@ public class Window extends JPanel implements ActionListener{
     
     @Override
     public void actionPerformed(ActionEvent e) {
-        // subtract ball size 10
-        if(x < 50 || x > 540){
+        // subtract ball size 50
+        if(x < 50 || x > 550){
             velX = -velX;
         }
-        if(y < 50 || y > 540){
+        if(y < 50 || y > 550){
             velY = -velY;
         }
         x+= velX;
