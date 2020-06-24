@@ -7,7 +7,7 @@ package moveworm;
 import javax.swing.*;
 import java.awt.*;
 
-public class MovingBall {
+public class App {
 
    
     public static void main(String[] args) {
@@ -18,7 +18,8 @@ public class MovingBall {
         f.setVisible(true);
         f.setTitle("moving ball");
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        f.setSize(620, 440);
+        f.setSize(600, 600);
+        f.setBackground(Color.green);
         
     }
     

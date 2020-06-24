@@ -13,7 +13,7 @@ import java.awt.geom.Ellipse2D;
 public class Window extends JPanel implements ActionListener{
     
     Timer t = new Timer(5, this);
-    double x = 50,y = 50, velX = 5, velY = 5;
+    double x = 50,y = 50, velX = 1, velY = 1;
     Graphics2D g2;
     
     public Window(){
@@ -25,7 +25,7 @@ public class Window extends JPanel implements ActionListener{
         super.paintComponent(g);
         g2 = (Graphics2D) g;
         g2.setColor(Color.red);
-        Ellipse2D circle = new Ellipse2D.Double(x,y,40,40);
+        Ellipse2D circle = new Ellipse2D.Double(x,y,10,10);
         g2.fill(circle);
         
        
@@ -36,11 +36,11 @@ public class Window extends JPanel implements ActionListener{
     
     @Override
     public void actionPerformed(ActionEvent e) {
-        // subtract ball size
-        if(x < 50 || x > 530){
+        // subtract ball size 10
+        if(x < 50 || x > 540){
             velX = -velX;
         }
-        if(y < 50 || y > 310){
+        if(y < 50 || y > 540){
             velY = -velY;
         }
         x+= velX;
