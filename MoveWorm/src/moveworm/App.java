@@ -7,17 +7,23 @@ package moveworm;
 import javax.swing.*;
 
 public class App {
+    Frame center;
+    JFrame window;
 
+    public App(){
+        center = new Frame();
+        window = new JFrame();
+
+        window.add(center);
+        window.setVisible(true);
+        window.setTitle("moving ball");
+        window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        window.setSize(300, 300);
+    }
    
     public static void main(String[] args) {
-        Frame w = new Frame();
-        JFrame f = new JFrame();
-        
-        f.add(w);
-        f.setVisible(true);
-        f.setTitle("moving ball");
-        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        f.setSize(600, 600);
+        App game = new App();
+
         
     }
     
