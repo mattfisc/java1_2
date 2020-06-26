@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Calculator/Calculator.iml" filepath="$PROJECT_DIR$/Calculator/Calculator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Calculator_fields_basic/Calculator_fields_basic.iml" filepath="$PROJECT_DIR$/Calculator_fields_basic/Calculator_fields_basic.iml" />
+      <module fileurl="file://$PROJECT_DIR$/DealaHand/DealaHand.iml" filepath="$PROJECT_DIR$/DealaHand/DealaHand.iml" />
+      <module fileurl="file://$PROJECT_DIR$/DealingGameJFrame/DealingGameJFrame.iml" filepath="$PROJECT_DIR$/DealingGameJFrame/DealingGameJFrame.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Draw/Draw.iml" filepath="$PROJECT_DIR$/Draw/Draw.iml" />
+      <module fileurl="file://$PROJECT_DIR$/DrawJFrame/DrawJFrame.iml" filepath="$PROJECT_DIR$/DrawJFrame/DrawJFrame.iml" />
+      <module fileurl="file://$PROJECT_DIR$/DrawingGraphics/DrawingGraphics.iml" filepath="$PROJECT_DIR$/DrawingGraphics/DrawingGraphics.iml" />
+      <module fileurl="file://$PROJECT_DIR$/DrawingNewBostonEx/DrawingNewBostonEx.iml" filepath="$PROJECT_DIR$/DrawingNewBostonEx/DrawingNewBostonEx.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JFramePrac/JFramePrac.iml" filepath="$PROJECT_DIR$/JFramePrac/JFramePrac.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JFrameTrial/JFrameTrial.iml" filepath="$PROJECT_DIR$/JFrameTrial/JFrameTrial.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MoveWorm/MoveWorm.iml" filepath="$PROJECT_DIR$/MoveWorm/MoveWorm.iml" />
+      <module fileurl="file://$PROJECT_DIR$/PaddleGameApp/PaddleGameApp.iml" filepath="$PROJECT_DIR$/PaddleGameApp/PaddleGameApp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Shapes/Shapes.iml" filepath="$PROJECT_DIR$/Shapes/Shapes.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/java1_2.iml" filepath="$PROJECT_DIR$/.idea/java1_2.iml" />
+    </modules>
+  </component>
+</project>
