@@ -8,23 +8,24 @@ import javax.swing.*;
 import javax.swing.border.Border;
 import java.awt.*;
 
-public class App {
+public class App extends JFrame{
+    Container content = this.getContentPane();
+
     Window_Panel game_panel;
-    JFrame window;
-    JPanel display;
+    Display_Panel display_panel;
 
     public App(){
-        window = new JFrame();
+
         game_panel = new Window_Panel();
+        display_panel = new Display_Panel();
 
-        window.add(game_panel);
-        window.setVisible(true);
-        window.setTitle("moving ball");
-        window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        window.setSize(600, 600);
+        setVisible(true);
+        setTitle("moving ball");
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setSize(600, 600);
 
-
-
+        content.add(display_panel,BorderLayout.NORTH);
+        content.add(game_panel,BorderLayout.CENTER);
     }
    
     public static void main(String[] args) {

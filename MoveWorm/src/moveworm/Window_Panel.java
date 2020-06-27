@@ -28,9 +28,10 @@ public class Window_Panel extends JPanel implements ActionListener, KeyListener 
     public Window_Panel(){
         game_over = false;
 
+        setBorder(BorderFactory.createEtchedBorder());
         setBackground(Color.black);
         setSize(300,300);
-        setLayout();
+
     }
 
     @Override

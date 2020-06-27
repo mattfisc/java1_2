@@ -20,10 +20,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="446c95d5-6249-4726-9324-c9c24a1a115b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/MoveWorm/src/moveworm/Display_Panel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MoveWorm/src/moveworm/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/MoveWorm/src/moveworm/App.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MoveWorm/src/moveworm/Window_Panel.java" beforeDir="false" afterPath="$PROJECT_DIR$/MoveWorm/src/moveworm/Window_Panel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MoveWorm/src/moveworm/Worm.java" beforeDir="false" afterPath="$PROJECT_DIR$/MoveWorm/src/moveworm/Worm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MoveWorm/moveworm/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MoveWorm/moveworm/App.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MoveWorm/moveworm/Window_Panel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MoveWorm/moveworm/Window_Panel.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +53,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Summer2020/TicTacToe_panel_easycomputer" />
   </component>
   <component name="RunManager">
     <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -84,7 +86,7 @@
       <option name="presentableId" value="Default" />
       <updated>1593197572828</updated>
       <workItem from="1593197575512" duration="63000" />
-      <workItem from="1593203111895" duration="7332000" />
+      <workItem from="1593203111895" duration="8688000" />
     </task>
     <servers />
   </component>
@@ -107,21 +109,29 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="488" y="70" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1593266238636" />
-    <state width="1323" height="179" key="GridCell.Tab.0.bottom" timestamp="1593277714776">
+    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1593280297509">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728/1366.0.1280.680@0.0.1366.728" timestamp="1593280297509" />
+    <state width="635" height="179" key="GridCell.Tab.0.bottom" timestamp="1593281301062">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="635" height="179" key="GridCell.Tab.0.bottom/0.0.1366.728/1366.0.1280.680@0.0.1366.728" timestamp="1593281301062" />
     <state width="1323" height="179" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1593277714776" />
-    <state width="1323" height="179" key="GridCell.Tab.0.center" timestamp="1593277714776">
+    <state width="635" height="179" key="GridCell.Tab.0.center" timestamp="1593281301062">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state width="635" height="179" key="GridCell.Tab.0.center/0.0.1366.728/1366.0.1280.680@0.0.1366.728" timestamp="1593281301062" />
     <state width="1323" height="179" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1593277714776" />
-    <state width="1323" height="179" key="GridCell.Tab.0.left" timestamp="1593277714776">
+    <state width="635" height="179" key="GridCell.Tab.0.left" timestamp="1593281301062">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state width="635" height="179" key="GridCell.Tab.0.left/0.0.1366.728/1366.0.1280.680@0.0.1366.728" timestamp="1593281301062" />
     <state width="1323" height="179" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1593277714776" />
-    <state width="1323" height="179" key="GridCell.Tab.0.right" timestamp="1593277714776">
+    <state width="635" height="179" key="GridCell.Tab.0.right" timestamp="1593281301062">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state width="635" height="179" key="GridCell.Tab.0.right/0.0.1366.728/1366.0.1280.680@0.0.1366.728" timestamp="1593281301062" />
     <state width="1323" height="179" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1593277714776" />
     <state width="602" height="284" key="javadoc.popup" timestamp="1593267234376">
       <screen x="0" y="0" width="1366" height="728" />
