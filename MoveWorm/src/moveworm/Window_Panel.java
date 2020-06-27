@@ -12,7 +12,45 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.geom.Ellipse2D;
 
-public class Window_Panel extends JPanel implements ActionListener, KeyListener {
+public class Window_Panel extends JPanel implements ActionListener{
+    KeyListener key_listener = new KeyListener() {
+        @Override
+        public void keyTyped(KeyEvent e) {
+
+        }
+
+        @Override
+        public void keyPressed(KeyEvent e) {
+            // alt code
+            if(e.getKeyCode() == KeyEvent.VK_LEFT && !direction.equals("right") ){
+                direction = "left";
+                x-= velX;
+                repaint();
+            }
+            else if(e.getKeyCode() == KeyEvent.VK_DOWN && !direction.equals("up") ){
+                direction = "down";
+                y+= velY;
+                repaint();
+
+            }
+            else if(e.getKeyCode() == KeyEvent.VK_RIGHT && !direction.equals("left") ){
+                direction = "right";
+                x-= velX;
+                repaint();
+            }
+            else if(e.getKeyCode() == KeyEvent.VK_UP && !direction.equals("down")){
+                direction = "up";
+                y-= velY;
+                repaint();
+            }
+        }
+
+        @Override
+        public void keyReleased(KeyEvent e) {
+
+        }
+    };
+
 
     Timer t = new Timer(5, this);
 
@@ -70,42 +108,7 @@ public class Window_Panel extends JPanel implements ActionListener, KeyListener 
 
     }
 
-    @Override
-    public void keyTyped(KeyEvent e) {
 
-    }
-
-    @Override
-    public void keyPressed(KeyEvent e) {
-        // alt code
-        if(e.getKeyCode() == KeyEvent.VK_LEFT && !direction.equals("right") ){
-            direction = "left";
-            x-= velX;
-            repaint();
-        }
-        else if(e.getKeyCode() == KeyEvent.VK_DOWN && !direction.equals("up") ){
-            direction = "down";
-            y+= velY;
-            repaint();
-
-        }
-        else if(e.getKeyCode() == KeyEvent.VK_RIGHT && !direction.equals("left") ){
-            direction = "right";
-            x-= velX;
-            repaint();
-        }
-        else if(e.getKeyCode() == KeyEvent.VK_UP && !direction.equals("down")){
-            direction = "up";
-            y-= velY;
-            repaint();
-        }
-
-    }
-
-    @Override
-    public void keyReleased(KeyEvent e) {
-
-    }
 
 //    public boolean end_game(){
 //        if(game_over == true)
