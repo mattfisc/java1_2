@@ -22,7 +22,7 @@ public class App extends JFrame{
         setVisible(true);
         setTitle("moving ball");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setSize(600, 600);
+        setSize(400, 400);
 
         content.add(display_panel,BorderLayout.NORTH);
         content.add(game_panel,BorderLayout.CENTER);
