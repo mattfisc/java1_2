@@ -13,18 +13,20 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.geom.Ellipse2D;
 
-public class Frame extends JPanel implements ActionListener{
+public class WindowFrame extends JPanel implements ActionListener{
     
     Timer t = new Timer(5, this);
-    double x = 10,y = 10, velX = .5, velY = .5;
+    int x = 10;
+    int y = 10;
+    double velX = .5, velY = .5;
     Graphics2D g2;
-    
-    public Frame(){
+
+
+    public WindowFrame(){
+
         setBackground(Color.black);
         setSize(300,300);
-        BorderLayout layout = new BorderLayout();
-        layout.setHgap(10);
-        layout.setVgap(10);
+
     }
 
     @Override
@@ -32,15 +34,16 @@ public class Frame extends JPanel implements ActionListener{
         super.paintComponent(g);
         g2 = (Graphics2D) g;
         g2.setColor(Color.red);
-        Ellipse2D circle = new Ellipse2D.Double(x,y,10,10);
-        g2.fill(circle);
-        
-       
+        Ellipse2D worm = new Ellipse2D.Double(x,y,10,10);
+        g2.fill(worm);
+
+
         t.start();
+
     }
-    
-    
-    
+
+
+
     @Override
     public void actionPerformed(ActionEvent e) {
         // subtract ball size 50
@@ -53,7 +56,7 @@ public class Frame extends JPanel implements ActionListener{
         x+= velX;
         y+= velY;
         repaint();
-              
+
     }
         
 }
