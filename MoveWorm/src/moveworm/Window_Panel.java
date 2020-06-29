@@ -12,52 +12,13 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.geom.Ellipse2D;
 
-public class Window_Panel extends JPanel implements ActionListener{
-    KeyListener key_listener = new KeyListener() {
-        @Override
-        public void keyTyped(KeyEvent e) {
-
-        }
-
-        @Override
-        public void keyPressed(KeyEvent e) {
-            // alt code
-            if(e.getKeyCode() == KeyEvent.VK_LEFT && !direction.equals("right") ){
-                direction = "left";
-                x-= velX;
-                repaint();
-            }
-            else if(e.getKeyCode() == KeyEvent.VK_DOWN && !direction.equals("up") ){
-                direction = "down";
-                y+= velY;
-                repaint();
-
-            }
-            else if(e.getKeyCode() == KeyEvent.VK_RIGHT && !direction.equals("left") ){
-                direction = "right";
-                x-= velX;
-                repaint();
-            }
-            else if(e.getKeyCode() == KeyEvent.VK_UP && !direction.equals("down")){
-                direction = "up";
-                y-= velY;
-                repaint();
-            }
-        }
-
-        @Override
-        public void keyReleased(KeyEvent e) {
-
-        }
-    };
-
-
-    Timer t = new Timer(5, this);
+public class Window_Panel extends JPanel implements KeyListener{
+    //Timer t = new Timer(5, this);
 
     // position on board
     int x = 190;
     int y = 10;
-    double velX = .5, velY = .5;
+    double velX = 5, velY = 5;
     String direction = "down";
 
     Graphics2D g2;
@@ -67,7 +28,7 @@ public class Window_Panel extends JPanel implements ActionListener{
         game_over = false;
         setBorder(BorderFactory.createEtchedBorder(Color.darkGray,Color.blue));
         setBackground(Color.black);
-
+        addKeyListener(this);
     }
 
     @Override
@@ -80,33 +41,65 @@ public class Window_Panel extends JPanel implements ActionListener{
         Ellipse2D worm = new Ellipse2D.Double(x,y,10,10);
         g2.fill(worm);
 
-        t.start();
-
+        //t.start();
     }
-
-
 
     @Override
-    public void actionPerformed(ActionEvent e) {
-        // WIDTH OF BALL
-        if(x < 10 || x > 380){
-            game_over = true;
-        }
-        if(y < 10 || y > 380){
-            game_over = true;
-        }
-
-        // MOVE IF NO CHANGE
-        if(direction.equals("up") || direction.equals("down"))
-            y+= velY;
-        else
-            x+= velX;
-
-
-
-        repaint();
+    public void keyTyped(KeyEvent e) {
 
     }
+
+    @Override
+    public void keyPressed(KeyEvent evt) {
+        int keyCode = evt.getKeyCode();
+        int d;
+        if (evt.isShiftDown())
+            d = 5;
+        else
+            d = 1;
+
+        if (keyCode == KeyEvent.VK_LEFT)
+            System.out.println(KeyEvent.VK_LEFT);
+
+        else if (keyCode == KeyEvent.VK_RIGHT)
+            System.out.println(KeyEvent.VK_LEFT);
+        else if (keyCode == KeyEvent.VK_UP)
+            System.out.println(KeyEvent.VK_LEFT);
+        else if (keyCode == KeyEvent.VK_DOWN)
+            System.out.println(KeyEvent.VK_LEFT);
+        else
+            System.out.println("else");
+        y+= velY;
+        repaint();
+    }
+
+    @Override
+    public void keyReleased(KeyEvent e) {
+
+    }
+
+
+//    @Override
+//    public void actionPerformed(ActionEvent e) {
+//        // WIDTH OF BALL
+//        if(x < 10 || x > 380){
+//            game_over = true;
+//        }
+//        if(y < 10 || y > 380){
+//            game_over = true;
+//        }
+//
+//        // MOVE IF NO CHANGE
+//        if(direction.equals("up") || direction.equals("down"))
+//            y+= velY;
+//        else
+//            x+= velX;
+//
+//
+//
+//        repaint();
+//
+//    }
 
 
 

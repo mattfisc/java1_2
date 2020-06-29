@@ -16,6 +16,7 @@ public class Worm {
         this.y_start = y_start;
         this.width = width;
         this.length = length;
+
         this.up = '0';
         this.down = 's';// default down
         this.right = '0';
