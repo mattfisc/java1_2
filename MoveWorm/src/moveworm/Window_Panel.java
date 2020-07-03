@@ -16,7 +16,7 @@ public class Window_Panel extends JPanel implements ActionListener,KeyListener{
     Timer t = new Timer(5, this);
 
     // position on board
-    Worm w = new Worm(190,10);
+    Worm w = new Worm();
 
     Graphics2D g2;
     boolean game_over;
@@ -104,4 +104,5 @@ public class Window_Panel extends JPanel implements ActionListener,KeyListener{
 //            // game continues
 //
 //    }
+
 }

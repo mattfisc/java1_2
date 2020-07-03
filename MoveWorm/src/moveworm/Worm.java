@@ -1,6 +1,7 @@
 package moveworm;
 
 public class Worm {
+    // position on board
     public int x;
     public int y;
 
@@ -10,9 +11,12 @@ public class Worm {
     public String direction;
     double velX = 1, velY = 1;
 
-    public Worm(int x,int y){
-        this.x = x;
-        this.y = y;
+    public Worm(){
+        // default position
+        this.x = 190;
+        this.y = 10;
+
+        // default size
         this.width = 10;
         this.length = 10;
 

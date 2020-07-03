@@ -20,7 +20,7 @@ public class App extends JFrame{
         display_panel = new Display_Panel();
 
         setVisible(true);
-        setTitle("moving ball");
+        setTitle("WormGame");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(400, 400);
 
@@ -29,7 +29,10 @@ public class App extends JFrame{
     }
    
     public static void main(String[] args) {
+
         App game = new App();
+
+
     }
     
 }
