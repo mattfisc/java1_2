@@ -1,25 +1,45 @@
 package moveworm;
 
 public class Worm {
-    public int x_start;
-    public int y_start;
+    public int x;
+    public int y;
+
     public int width;
     public int length;
 
-    public char up;
-    public char down;
-    public char right;
-    public char left;
+    public String direction;
+    double velX = 1, velY = 1;
 
-    public Worm(int x_start,int y_start,int width,int length){
-        this.x_start = x_start;
-        this.y_start = y_start;
+    public Worm(int x,int y){
+        this.x = x;
+        this.y = y;
+        this.width = 10;
+        this.length = 10;
+
+        this.direction = "down";
+    }
+
+    public String getDirection() {
+        return direction;
+    }
+
+    public void setDirection(String direction) {
+        this.direction = direction;
+    }
+
+    public int getWidth() {
+        return width;
+    }
+
+    public void setWidth(int width) {
         this.width = width;
-        this.length = length;
+    }
 
-        this.up = '0';
-        this.down = 's';// default down
-        this.right = '0';
-        this.left = '0';
+    public int getLength() {
+        return length;
+    }
+
+    public void setLength(int length) {
+        this.length = length;
     }
 }

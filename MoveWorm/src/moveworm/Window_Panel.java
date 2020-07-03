@@ -12,14 +12,11 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.geom.Ellipse2D;
 
-public class Window_Panel extends JPanel implements KeyListener{
-    //Timer t = new Timer(5, this);
+public class Window_Panel extends JPanel implements ActionListener,KeyListener{
+    Timer t = new Timer(5, this);
 
     // position on board
-    int x = 190;
-    int y = 10;
-    double velX = 5, velY = 5;
-    String direction = "down";
+    Worm w = new Worm(190,10);
 
     Graphics2D g2;
     boolean game_over;
@@ -38,10 +35,10 @@ public class Window_Panel extends JPanel implements KeyListener{
         g2 = (Graphics2D) g;
         g2.setColor(Color.red);
 
-        Ellipse2D worm = new Ellipse2D.Double(x,y,10,10);
+        Ellipse2D worm = new Ellipse2D.Double(w.x,w.y,w.width,w.length);
         g2.fill(worm);
 
-        //t.start();
+        t.start();
     }
 
     @Override
@@ -51,6 +48,7 @@ public class Window_Panel extends JPanel implements KeyListener{
 
     @Override
     public void keyPressed(KeyEvent evt) {
+        System.out.println("hello");
         int keyCode = evt.getKeyCode();
         int d;
         if (evt.isShiftDown())
@@ -59,17 +57,16 @@ public class Window_Panel extends JPanel implements KeyListener{
             d = 1;
 
         if (keyCode == KeyEvent.VK_LEFT)
-            System.out.println(KeyEvent.VK_LEFT);
+            w.direction = "left";
 
         else if (keyCode == KeyEvent.VK_RIGHT)
-            System.out.println(KeyEvent.VK_LEFT);
+            w.direction = "right";
         else if (keyCode == KeyEvent.VK_UP)
-            System.out.println(KeyEvent.VK_LEFT);
+            w.direction = "up";
         else if (keyCode == KeyEvent.VK_DOWN)
-            System.out.println(KeyEvent.VK_LEFT);
-        else
-            System.out.println("else");
-        y+= velY;
+            w.direction = "down";
+
+
         repaint();
     }
 
@@ -78,28 +75,24 @@ public class Window_Panel extends JPanel implements KeyListener{
 
     }
 
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        // WIDTH OF BALL
+        if(w.x < 10 || w.x > 280){
+            game_over = true;
+        }
+        if(w.y < 10 || w.y > 280){
+            game_over = true;
+        }
 
-//    @Override
-//    public void actionPerformed(ActionEvent e) {
-//        // WIDTH OF BALL
-//        if(x < 10 || x > 380){
-//            game_over = true;
-//        }
-//        if(y < 10 || y > 380){
-//            game_over = true;
-//        }
-//
-//        // MOVE IF NO CHANGE
-//        if(direction.equals("up") || direction.equals("down"))
-//            y+= velY;
-//        else
-//            x+= velX;
-//
-//
-//
-//        repaint();
-//
-//    }
+        // MOVE IF NO CHANGE
+        if(w.direction.equals("up") || w.direction.equals("down"))
+            w.y+= w.velY;
+        else
+            w.x+= w.velX;
+
+        repaint();
+    }
 
 
 
