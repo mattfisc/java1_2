@@ -33,8 +33,8 @@ public class Board_Panel extends JPanel implements ActionListener,KeyListener{
 
         game_over = false;
 
-        setSize(new Dimension(400,400));
-        setBorder(BorderFactory.createEtchedBorder(Color.darkGray,Color.blue));
+
+        setBorder(BorderFactory.createEtchedBorder(3,Color.blue,Color.darkGray));
         setBackground(Color.black);
 
     }
@@ -59,22 +59,24 @@ public class Board_Panel extends JPanel implements ActionListener,KeyListener{
 
     @Override
     public void keyPressed(KeyEvent e) {
-        int keycode = e.getKeyCode();
-        if(keycode == KeyEvent.VK_UP)
-            //System.out.println("up");
-            direction = "up";
-        else if(keycode == KeyEvent.VK_DOWN)
-            direction = "down";
-            //System.out.println("down");
-        else if(keycode == KeyEvent.VK_LEFT)
-            direction = "left";
-        else if(keycode == KeyEvent.VK_RIGHT)
-            direction = "right";
-        else
-            System.out.println("key pressed");
-        status.setText(" ");
+        if(!game_over){
+            int keycode = e.getKeyCode();
+            if(keycode == KeyEvent.VK_UP)
+                //System.out.println("up");
+                direction = "up";
+            else if(keycode == KeyEvent.VK_DOWN)
+                direction = "down";
+                //System.out.println("down");
+            else if(keycode == KeyEvent.VK_LEFT)
+                direction = "left";
+            else if(keycode == KeyEvent.VK_RIGHT)
+                direction = "right";
+            else
+                System.out.println("key pressed");
+            status.setText(" ");
 
-        repaint();//add this line to update the UI
+            repaint();//add this line to update the UI
+        }
 
     }
 
@@ -85,10 +87,10 @@ public class Board_Panel extends JPanel implements ActionListener,KeyListener{
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if(w.x < 0 || w.x > 400)
+        if(w.x < 5 || w.x > 395)
             game_over = true;
 
-        if(w.y < 0 || w.y > 400)
+        if(w.y < 5 || w.y > 395)
             game_over = true;
 
         if(direction.equals("up"))

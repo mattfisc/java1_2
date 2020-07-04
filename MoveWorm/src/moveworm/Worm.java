@@ -13,8 +13,8 @@ public class Worm {
 
     public Worm(){
         // default position
-        this.x = 200;
-        this.y = 200;
+        this.x = 195;
+        this.y = 195;
 
         // default size
         this.width = 10;

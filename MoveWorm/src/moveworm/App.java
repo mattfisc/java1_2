@@ -20,7 +20,11 @@ public class App extends JFrame {
     public App(){
 
         board = new Board_Panel();
+        board.setPreferredSize(new Dimension(400,400));
+
         display = new Display_Panel();
+        display.setPreferredSize(new Dimension(400,50));
+
         worm = new Worm();
 
 

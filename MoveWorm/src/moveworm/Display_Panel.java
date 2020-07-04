@@ -10,7 +10,6 @@ public class Display_Panel extends JPanel {
 
 
     public Display_Panel(){
-        setSize(500,100);
         setBackground(Color.black);
         new_game = new JButton("New Game");
         add(new_game,BorderLayout.CENTER);
