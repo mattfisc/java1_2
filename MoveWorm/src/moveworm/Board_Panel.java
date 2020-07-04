@@ -15,13 +15,16 @@ import java.awt.geom.Ellipse2D;
 public class Board_Panel extends JPanel implements ActionListener,KeyListener{
     Timer t = new Timer(5, this);
 
-    // position on board
+    // Worm
     Worm w = new Worm();
-
+    String direction;
     Graphics2D g2;
+
     boolean game_over;
 
     public Board_Panel(){
+        direction = "start";
+
         game_over = false;
         setSize(400,400);
         setBorder(BorderFactory.createEtchedBorder(Color.darkGray,Color.blue));
@@ -49,26 +52,21 @@ public class Board_Panel extends JPanel implements ActionListener,KeyListener{
 
     @Override
     public void keyPressed(KeyEvent e) {
-        System.out.println("hello");
-        int keyCode = e.getKeyCode();
-        int d;
-        if (e.isShiftDown())
-            d = 5;
+        int keycode = e.getKeyCode();
+        if(keycode == KeyEvent.VK_UP)
+            //System.out.println("up");
+            direction = "up";
+        else if(keycode == KeyEvent.VK_DOWN)
+            direction = "down";
+            //System.out.println("down");
+        else if(keycode == KeyEvent.VK_LEFT)
+            direction = "left";
+        else if(keycode == KeyEvent.VK_RIGHT)
+            direction = "right";
         else
-            d = 1;
-        System.out.println("keyTyped: "+e);
-        if (keyCode == KeyEvent.VK_LEFT)
-            System.out.println("keyTyped: "+e);
+            System.out.println("key pressed");
+        repaint();//add this line to update the UI
 
-        else if (keyCode == KeyEvent.VK_RIGHT)
-            System.out.println("keyTyped: "+e);
-        else if (keyCode == KeyEvent.VK_UP)
-            System.out.println("keyTyped: "+e);
-        else if (keyCode == KeyEvent.VK_DOWN)
-            System.out.println("keyTyped: "+e);
-
-
-        repaint();
     }
 
     @Override
@@ -78,21 +76,23 @@ public class Board_Panel extends JPanel implements ActionListener,KeyListener{
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        // WIDTH OF BALL
-        if(w.x < 10 || w.x > 280){
+        if(w.x < 10 || w.x > 390)
             game_over = true;
-        }
-        if(w.y < 10 || w.y > 280){
+
+        if(w.y < 10 || w.y > 390)
             game_over = true;
-        }
 
-        // MOVE IF NO CHANGE
-        if(w.direction.equals("up") || w.direction.equals("down"))
-            w.y+= w.velY;
-        else if(w.direction.equals("left") || w.direction.equals("right"))
-            w.x+= w.velX;
+        if(direction.equals("up"))
+            w.y -= w.velY;
+        else if(direction.equals("down"))
+            w.y += w.velY;
+        else if(direction.equals("left"))
+            w.x -= w.velX;
+        else if(direction.equals("right"))
+            w.x += w.velX;
 
-        repaint();
+        if(!game_over)
+            repaint();
     }
 
 

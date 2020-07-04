@@ -20,16 +20,9 @@ public class Worm {
         this.width = 10;
         this.length = 10;
 
-        this.direction = "down";
+
     }
 
-    public String getDirection() {
-        return direction;
-    }
-
-    public void setDirection(String direction) {
-        this.direction = direction;
-    }
 
     public int getWidth() {
         return width;

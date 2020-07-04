@@ -6,41 +6,37 @@ package moveworm;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 
-public class App extends JFrame implements ActionListener {
+public class App extends JFrame {
     Container content = this.getContentPane();
 
-    Board_Panel game_panel;
-    Display_Panel display_panel;
+    Board_Panel board;
+    Display_Panel display;
 
+    Worm worm;
 
     public App(){
 
-        game_panel = new Board_Panel();
-        display_panel = new Display_Panel();
+        board = new Board_Panel();
+        display = new Display_Panel();
+        worm = new Worm();
 
         setVisible(true);
         setTitle("WormGame");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(500, 500);
 
-        content.add(display_panel,BorderLayout.NORTH);
-        content.add(game_panel,BorderLayout.CENTER);
+        content.add(display,BorderLayout.SOUTH);
+        content.add(board,BorderLayout.CENTER);
+        addKeyListener(board);
 
-        game_panel.addKeyListener(game_panel);
-        game_panel.setFocusable(true);
+        board.setFocusable(true);
     }
    
     public static void main(String[] args) {
         App game = new App();
     }
 
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        if (e.getSource() == "new_game")
-            System.out.println("hello");
-        content.add(new Board_Panel(),BorderLayout.CENTER);
-    }
 }
