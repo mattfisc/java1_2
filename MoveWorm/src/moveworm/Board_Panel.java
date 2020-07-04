@@ -12,7 +12,7 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.geom.Ellipse2D;
 
-public class Window_Panel extends JPanel implements ActionListener,KeyListener{
+public class Board_Panel extends JPanel implements ActionListener,KeyListener{
     Timer t = new Timer(5, this);
 
     // position on board
@@ -21,11 +21,12 @@ public class Window_Panel extends JPanel implements ActionListener,KeyListener{
     Graphics2D g2;
     boolean game_over;
 
-    public Window_Panel(){
+    public Board_Panel(){
         game_over = false;
+        setSize(400,400);
         setBorder(BorderFactory.createEtchedBorder(Color.darkGray,Color.blue));
         setBackground(Color.black);
-        addKeyListener(this);
+
     }
 
     @Override
@@ -47,24 +48,24 @@ public class Window_Panel extends JPanel implements ActionListener,KeyListener{
     }
 
     @Override
-    public void keyPressed(KeyEvent evt) {
+    public void keyPressed(KeyEvent e) {
         System.out.println("hello");
-        int keyCode = evt.getKeyCode();
+        int keyCode = e.getKeyCode();
         int d;
-        if (evt.isShiftDown())
+        if (e.isShiftDown())
             d = 5;
         else
             d = 1;
-
+        System.out.println("keyTyped: "+e);
         if (keyCode == KeyEvent.VK_LEFT)
-            w.direction = "left";
+            System.out.println("keyTyped: "+e);
 
         else if (keyCode == KeyEvent.VK_RIGHT)
-            w.direction = "right";
+            System.out.println("keyTyped: "+e);
         else if (keyCode == KeyEvent.VK_UP)
-            w.direction = "up";
+            System.out.println("keyTyped: "+e);
         else if (keyCode == KeyEvent.VK_DOWN)
-            w.direction = "down";
+            System.out.println("keyTyped: "+e);
 
 
         repaint();
@@ -88,7 +89,7 @@ public class Window_Panel extends JPanel implements ActionListener,KeyListener{
         // MOVE IF NO CHANGE
         if(w.direction.equals("up") || w.direction.equals("down"))
             w.y+= w.velY;
-        else
+        else if(w.direction.equals("left") || w.direction.equals("right"))
             w.x+= w.velX;
 
         repaint();
