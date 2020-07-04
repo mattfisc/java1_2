@@ -9,7 +9,7 @@ public class Worm {
     public double length;
 
     public String direction;
-    double velX = .5, velY = .5;
+    double velX = .7, velY = .7;
 
     public Worm(){
         // default position
@@ -24,7 +24,7 @@ public class Worm {
     }
 
 
-    public int getWidth() {
+    public double getWidth() {
         return width;
     }
 
@@ -32,7 +32,7 @@ public class Worm {
         this.width = width;
     }
 
-    public int getLength() {
+    public double getLength() {
         return length;
     }
 

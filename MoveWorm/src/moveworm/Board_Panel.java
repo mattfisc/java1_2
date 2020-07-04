@@ -12,8 +12,14 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.geom.Ellipse2D;
 
+import java.util.Random;
+
 public class Board_Panel extends JPanel implements ActionListener,KeyListener{
     Timer t = new Timer(5, this);
+
+    int level;
+    int[] food_list;
+    int food_index;
 
     JLabel status;
 
@@ -22,18 +28,27 @@ public class Board_Panel extends JPanel implements ActionListener,KeyListener{
     String direction;
     Graphics2D g2;
 
-    boolean game_over;
+    Graphics2D food;
 
+    boolean game_over;
+    Random rnd;
     public Board_Panel(){
+        rnd = new Random();
+
+        level = 1;
+        food_list = new int[9+level];
+        food_index = 0;
+
         direction = "start";
         status = new JLabel("Use arrows to start the Game");
         status.setForeground(Color.lightGray);
-
         add(status,BorderLayout.NORTH);
 
         game_over = false;
 
-        setBorder(BorderFactory.createEtchedBorder(3,Color.blue,Color.darkGray));
+//        Border border = new LineBorder(Color.blue, 1, false);
+//        //setBorder(BorderFactory.createEtchedBorder(3,Color.blue,Color.darkGray));
+//        setBorder(border);
         setBackground(Color.black);
 
     }
@@ -43,12 +58,19 @@ public class Board_Panel extends JPanel implements ActionListener,KeyListener{
         super.paintComponent(g);
 
         g2 = (Graphics2D) g;
-        g2.setColor(Color.red);
+        g2.setColor(Color.GREEN);
 
         Ellipse2D worm = new Ellipse2D.Double(w.x,w.y,w.width,w.length);
         g2.fill(worm);
 
+        food = (Graphics2D) g;
+        food.setColor(Color.ORANGE);
+        Ellipse2D f = new Ellipse2D.Double(rnd.nextInt(390),rnd.nextInt(390),10,10);
+        food.fill(f);
+
         t.start();
+
+
     }
 
     @Override
@@ -83,10 +105,12 @@ public class Board_Panel extends JPanel implements ActionListener,KeyListener{
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if(w.x < 5 || w.x > 395)
+        // minus worm width 10
+
+        if(w.x < 0 || w.x > 390)
             game_over = true;
 
-        if(w.y < 5 || w.y > 395)
+        if(w.y < 0 || w.y > 390)
             game_over = true;
 
         if(direction.equals("up"))

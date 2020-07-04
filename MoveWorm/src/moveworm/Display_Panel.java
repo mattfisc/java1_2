@@ -16,4 +16,8 @@ public class Display_Panel extends JPanel {
 
         setBorder(BorderFactory.createEtchedBorder(Color.darkGray,Color.blue));
     }
+
+    public void newGameActionListener(ActionListener listener) {
+        new_game.addActionListener(listener);
+    }
 }
