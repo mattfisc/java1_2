@@ -33,7 +33,6 @@ public class Board_Panel extends JPanel implements ActionListener,KeyListener{
 
         game_over = false;
 
-
         setBorder(BorderFactory.createEtchedBorder(3,Color.blue,Color.darkGray));
         setBackground(Color.black);
 
@@ -61,19 +60,16 @@ public class Board_Panel extends JPanel implements ActionListener,KeyListener{
     public void keyPressed(KeyEvent e) {
         if(!game_over){
             int keycode = e.getKeyCode();
-            if(keycode == KeyEvent.VK_UP)
-                //System.out.println("up");
+            if(keycode == KeyEvent.VK_UP && !direction.equals("down"))
                 direction = "up";
-            else if(keycode == KeyEvent.VK_DOWN)
+            else if(keycode == KeyEvent.VK_DOWN && !direction.equals("up"))
                 direction = "down";
-                //System.out.println("down");
-            else if(keycode == KeyEvent.VK_LEFT)
+            else if(keycode == KeyEvent.VK_LEFT && !direction.equals("right"))
                 direction = "left";
-            else if(keycode == KeyEvent.VK_RIGHT)
+            else if(keycode == KeyEvent.VK_RIGHT && !direction.equals("left"))
                 direction = "right";
-            else
-                System.out.println("key pressed");
-            status.setText(" ");
+
+            status.setText("Eat the food");
 
             repaint();//add this line to update the UI
         }
@@ -107,16 +103,5 @@ public class Board_Panel extends JPanel implements ActionListener,KeyListener{
         else
             status.setText("You died");
     }
-
-
-
-//    public boolean end_game(){
-//        if(game_over == true)
-//            // end game
-//            //the game is over
-//        else if(game_over == false)
-//            // game continues
-//
-//    }
 
 }

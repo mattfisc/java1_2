@@ -2,14 +2,14 @@ package moveworm;
 
 public class Worm {
     // position on board
-    public int x;
-    public int y;
+    public double x;
+    public double y;
 
-    public int width;
-    public int length;
+    public double width;
+    public double length;
 
     public String direction;
-    double velX = 1, velY = 1;
+    double velX = .5, velY = .5;
 
     public Worm(){
         // default position
