@@ -15,6 +15,8 @@ import java.awt.geom.Ellipse2D;
 public class Board_Panel extends JPanel implements ActionListener,KeyListener{
     Timer t = new Timer(5, this);
 
+    JLabel status;
+
     // Worm
     Worm w = new Worm();
     String direction;
@@ -24,6 +26,8 @@ public class Board_Panel extends JPanel implements ActionListener,KeyListener{
 
     public Board_Panel(){
         direction = "start";
+        status = new JLabel("Use arrows to start the Game");
+        add(status,BorderLayout.NORTH);
 
         game_over = false;
         setSize(400,400);
@@ -65,6 +69,8 @@ public class Board_Panel extends JPanel implements ActionListener,KeyListener{
             direction = "right";
         else
             System.out.println("key pressed");
+        status.setText(" ");
+
         repaint();//add this line to update the UI
 
     }
@@ -76,10 +82,10 @@ public class Board_Panel extends JPanel implements ActionListener,KeyListener{
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if(w.x < 10 || w.x > 390)
+        if(w.x < 0 || w.x > 400)
             game_over = true;
 
-        if(w.y < 10 || w.y > 390)
+        if(w.y < 0 || w.y > 400)
             game_over = true;
 
         if(direction.equals("up"))
@@ -93,6 +99,8 @@ public class Board_Panel extends JPanel implements ActionListener,KeyListener{
 
         if(!game_over)
             repaint();
+        else
+            status.setText("You died");
     }
 
 

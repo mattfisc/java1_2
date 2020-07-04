@@ -24,15 +24,17 @@ public class App extends JFrame {
         worm = new Worm();
 
         setVisible(true);
-        setTitle("WormGame");
+        setTitle("Worm Game");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(500, 500);
 
         content.add(display,BorderLayout.SOUTH);
         content.add(board,BorderLayout.CENTER);
+
         addKeyListener(board);
 
         board.setFocusable(true);
+        requestFocusInWindow();
     }
    
     public static void main(String[] args) {
