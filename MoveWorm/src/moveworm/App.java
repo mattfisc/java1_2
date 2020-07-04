@@ -23,10 +23,11 @@ public class App extends JFrame {
         display = new Display_Panel();
         worm = new Worm();
 
-        setVisible(true);
+
         setTitle("Worm Game");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setSize(500, 500);
+        setSize(400, 500);
+        setVisible(true);
 
         content.add(display,BorderLayout.SOUTH);
         content.add(board,BorderLayout.CENTER);

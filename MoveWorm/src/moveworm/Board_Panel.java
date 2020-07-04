@@ -27,10 +27,13 @@ public class Board_Panel extends JPanel implements ActionListener,KeyListener{
     public Board_Panel(){
         direction = "start";
         status = new JLabel("Use arrows to start the Game");
+        status.setForeground(Color.lightGray);
+
         add(status,BorderLayout.NORTH);
 
         game_over = false;
-        setSize(400,400);
+
+        setSize(new Dimension(400,400));
         setBorder(BorderFactory.createEtchedBorder(Color.darkGray,Color.blue));
         setBackground(Color.black);
 
