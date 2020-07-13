@@ -20,6 +20,7 @@ public class Board_Panel extends JPanel implements ActionListener,KeyListener{
     int level;
     Food[] food_list;
     int food_index;
+    Graphics2D food;
 
     JLabel status;
 
@@ -28,7 +29,7 @@ public class Board_Panel extends JPanel implements ActionListener,KeyListener{
     String direction;
     Graphics2D g2;
 
-    Graphics2D food;
+
 
     boolean game_over;
 
@@ -38,9 +39,11 @@ public class Board_Panel extends JPanel implements ActionListener,KeyListener{
         level = 1;
         food_list = new Food[20];
 
+        // initialize food list
         for(int i = 0; i < food_list.length; i++){
             food_list[i] = new Food();
         }
+
         food_index = 0;
 
         direction = "start";
@@ -50,9 +53,6 @@ public class Board_Panel extends JPanel implements ActionListener,KeyListener{
 
         game_over = false;
 
-//        Border border = new LineBorder(Color.blue, 1, false);
-//        //setBorder(BorderFactory.createEtchedBorder(3,Color.blue,Color.darkGray));
-//        setBorder(border);
         setBackground(Color.black);
 
     }
@@ -69,8 +69,18 @@ public class Board_Panel extends JPanel implements ActionListener,KeyListener{
 
         food = (Graphics2D) g;
         food.setColor(Color.ORANGE);
-        Ellipse2D f = new Ellipse2D.Double(food_list[food_index].x,food_list[food_index].y,10,10);
+        Ellipse2D f = new Ellipse2D.Double(rnd.nextInt(390),rnd.nextInt(390),10,10);
         food.fill(f);
+
+        if(food_list[food_index].eatten != false) {
+            food = (Graphics2D) g;
+            food.setColor(Color.ORANGE);
+            Ellipse2D f = new Ellipse2D.Double(food_list[food_index].x,
+                    food_list[food_index].y,
+                    10, 10);
+            food.fill(f);
+        }
+
 
         t.start();
 

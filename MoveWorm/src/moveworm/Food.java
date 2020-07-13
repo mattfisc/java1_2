@@ -1,9 +1,10 @@
 package moveworm;
 
+
 import java.util.Random;
 
 public class Food {
-    private Random rnd;
+    public Random rnd;
     public int x;
     public int y;
     public boolean eatten;
@@ -11,7 +12,15 @@ public class Food {
     public Food(){
         rnd = new Random();
         this.x = rnd.nextInt(390);
-        this.y =  rnd.nextInt(390);
-        eatten = false;
+        this.y = rnd.nextInt(390);
+        this.eatten = false;
+    }
+
+    public boolean isEatten() {
+        return eatten;
+    }
+
+    public void setEatten(boolean eatten) {
+        this.eatten = eatten;
     }
 }
