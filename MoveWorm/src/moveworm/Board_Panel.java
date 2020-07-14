@@ -18,7 +18,7 @@ public class Board_Panel extends JPanel implements ActionListener,KeyListener{
     Timer t = new Timer(5, this);
 
     int level;
-    int[] food_list;
+    Food[] food_list;
     int food_index;
 
     JLabel status;
@@ -31,12 +31,16 @@ public class Board_Panel extends JPanel implements ActionListener,KeyListener{
     Graphics2D food;
 
     boolean game_over;
-    Random rnd;
+
+
     public Board_Panel(){
-        rnd = new Random();
 
         level = 1;
-        food_list = new int[9+level];
+        food_list = new Food[20];
+
+        for(int i = 0; i < food_list.length; i++){
+            food_list[i] = new Food();
+        }
         food_index = 0;
 
         direction = "start";
@@ -65,7 +69,7 @@ public class Board_Panel extends JPanel implements ActionListener,KeyListener{
 
         food = (Graphics2D) g;
         food.setColor(Color.ORANGE);
-        Ellipse2D f = new Ellipse2D.Double(rnd.nextInt(390),rnd.nextInt(390),10,10);
+        Ellipse2D f = new Ellipse2D.Double(food_list[food_index].x,food_list[food_index].y,10,10);
         food.fill(f);
 
         t.start();
