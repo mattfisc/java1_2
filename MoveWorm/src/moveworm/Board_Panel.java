@@ -39,10 +39,7 @@ public class Board_Panel extends JPanel implements ActionListener,KeyListener{
         level = 1;
         food_list = new Food[20];
 
-        // initialize food list
-        for(int i = 0; i < food_list.length; i++){
-            food_list[i] = new Food();
-        }
+
 
         food_index = 0;
 
@@ -67,17 +64,29 @@ public class Board_Panel extends JPanel implements ActionListener,KeyListener{
         Ellipse2D worm = new Ellipse2D.Double(w.x,w.y,w.width,w.length);
         g2.fill(worm);
 
+        // Check if eatten food
 
-        if(food_list[food_index].eatten == false) {
-            food_index++;
-        }
-        else{
+
+        // paint old food or new food
+        if(food_list[food_index] == null){
+            // initialize
+            food_list[food_index] = new Food();
+
+            // paint food
             food = (Graphics2D) g;
             food.setColor(Color.ORANGE);
             Ellipse2D f = new Ellipse2D.Double(food_list[food_index].x,
                     food_list[food_index].y,
                     10, 10);
             food.fill(f);
+        }
+        // food eatten
+        else if(food_list[food_index].eatten == true) {
+            food_index++;
+        }
+        // food not eatten
+        else{
+
         }
 
 
