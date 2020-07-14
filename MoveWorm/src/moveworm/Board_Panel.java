@@ -67,12 +67,11 @@ public class Board_Panel extends JPanel implements ActionListener,KeyListener{
         Ellipse2D worm = new Ellipse2D.Double(w.x,w.y,w.width,w.length);
         g2.fill(worm);
 
-        food = (Graphics2D) g;
-        food.setColor(Color.ORANGE);
-        Ellipse2D f = new Ellipse2D.Double(rnd.nextInt(390),rnd.nextInt(390),10,10);
-        food.fill(f);
 
-        if(food_list[food_index].eatten != false) {
+        if(food_list[food_index].eatten == false) {
+            food_index++;
+        }
+        else{
             food = (Graphics2D) g;
             food.setColor(Color.ORANGE);
             Ellipse2D f = new Ellipse2D.Double(food_list[food_index].x,
