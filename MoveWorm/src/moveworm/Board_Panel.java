@@ -39,8 +39,6 @@ public class Board_Panel extends JPanel implements ActionListener,KeyListener{
         level = 1;
         food_list = new Food[20];
 
-
-
         food_index = 0;
 
         direction = "start";
@@ -89,9 +87,7 @@ public class Board_Panel extends JPanel implements ActionListener,KeyListener{
 
         }
 
-
         t.start();
-
 
     }
 
